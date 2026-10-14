@@ -1,51 +1,19 @@
 import Link from 'next/link';
+import { mockListing } from '@/app/sightseeings/_data';
 
-// TODO: при подключении бэкенда заменить visitItems на данные из ISightsResponse:
-//   interface ISightsResponse { list: ISight[] }
-//   где ISight: { id: string; title: string; imageUrl: string }
-// Текущие поля не соответствуют контракту:
-//   - id должен быть string (сейчас number)
-//   - поле image должно называться imageUrl
-//   - href и className — не часть контракта, формировать из id на уровне компонента
-//   - URL （href） страницы объекта должен собираться динамически из id
-//  - Добавить поддержку img как урл
-const visitItems = [
-    {
-        id: 1, // TODO: id должен быть string согласно контракту ISight
-        title: 'гора Могутовая',
-        image: '/images/visits/mountain.jpg', // TODO: переименовать в imageUrl согласно контракту ISight
-        href: '/sightseeings/mountain',
-        className: 'object-[48%_52%]',
-    },
-    {
-        id: 2,
-        title: 'Богатырская слобода',
-        image: '/images/visits/villages-soul.png',
-        href: '/sightseeings/villages-soul',
-        className: 'object-[42%_50%]',
-    },
-    {
-        id: 3,
-        title: 'Памятник преданности',
-        image: '/images/visits/predannosti.jpg',
-        href: '/sightseeings/predannosti',
-        className: 'object-[50%_50%]',
-    },
-    {
-        id: 4,
-        title: 'Серноводская пещера',
-        image: '/images/visits/peschera.png',
-        href: '/sightseeings/peschera',
-        className: 'object-[50%_50%]',
-    },
-    {
-        id: 5,
-        title: 'Памятник В. Н. Татищеву',
-        image: '/images/visits/glory-square.png',
-        href: '/sightseeings/glory-square',
-        className: 'object-[44%_48%]',
-    },
+const VISITS: Array<{ id: string; className: string }> = [
+    { id: 'mountain', className: 'object-[48%_52%]' },
+    { id: 'villages-soul', className: 'object-[42%_50%]' },
+    { id: 'predannosti', className: 'object-[50%_50%]' },
+    { id: 'peschera', className: 'object-[50%_50%]' },
+    { id: 'glory-square', className: 'object-[44%_48%]' },
 ];
+
+// TODO: Добавить поддержку img как урл
+const visitItems = VISITS.flatMap(({ id, className }) => {
+    const sight = mockListing.sights.find((one) => one.id === id);
+    return sight ? [{ ...sight, className, href: `/sightseeings/${sight.id}` }] : [];
+});
 
 export default function Visits() {
     return (
@@ -59,14 +27,14 @@ export default function Visits() {
                     <div className="flex w-max items-stretch gap-4 md:gap-5 lg:w-full lg:gap-5">
                         {visitItems.map((item) => (
                             <Link
-                                key={item.title}
+                                key={item.id}
                                 href={item.href}
                                 className="group flex w-[176px] shrink-0 flex-col sm:w-[260px] md:w-[340px] lg:w-auto lg:flex-1 lg:transition-[flex-grow] lg:duration-300 lg:ease-out lg:hover:flex-[1.55]"
                             >
                                 <span
                                     className="relative block h-[236px] overflow-hidden sm:h-[320px] md:h-[420px] lg:h-[400px]">
                                     <img
-                                        src={item.image}
+                                        src={item.imageUrl}
                                         alt={item.title}
                                         className={`h-full w-full object-cover lg:transition-transform lg:duration-300 lg:group-hover:scale-105 ${item.className}`}
                                     />

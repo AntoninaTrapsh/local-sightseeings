@@ -3,10 +3,10 @@ import s from './styles.module.css';
 import Image from 'next/image';
 import cn from 'classnames';
 import Link from 'next/link';
-import { SightT } from '@/app/types/sight';
+import { ISight } from '@/api/listings';
 
 interface SightCardProps {
-  sight: SightT;
+  sight: ISight;
 }
 
 export const SightCard: FC<SightCardProps> = ({ sight }) => {

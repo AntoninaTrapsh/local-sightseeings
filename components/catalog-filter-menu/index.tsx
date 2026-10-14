@@ -4,6 +4,7 @@ import { FC, useCallback, useState } from 'react';
 import cn from 'classnames';
 import { locationOptions, categoryOptions, interestByOptions, openingHoursOptions, priceOptions } from './_data';
 import { Button } from '@/shared/Button';
+import { ESightsFilter } from '@/api/listings';
 
 export type Filter = Record<ESightsFilter, string[]>;
 
