@@ -10,7 +10,7 @@ import { SectionContent } from './SectionContent';
 import { SECTION_CONFIG, SectionId } from './constants';
 import { NavButton } from './NavButton';
 import { Loader } from '@/components/Loader';
-import Image from 'next/image';
+import { CoverImage } from '@/components/CoverImage';
 
 export default function SightseeingDetailPage() {
   const [active, setActive] = useState<SectionId>('info');
@@ -59,16 +59,18 @@ export default function SightseeingDetailPage() {
     notFound();
   }
 
-  const { title, imageUrl } = data.generalInfo;
+  const { title, imageUrl, imageUrlMobile } = data.generalInfo;
 
   return (
     <article className="min-h-screen bg-background">
       <section className="w-full">
-        <Image
+        <CoverImage
           src={imageUrl}
+          mobileSrc={imageUrlMobile}
           alt={title}
           width={1600}
           height={900}
+          sizes="100vw"
           className="h-[407px] w-full object-cover object-[32%_50%] md:h-[360px] md:object-[50%_50%] lg:h-[620px]"
         />
       </section>

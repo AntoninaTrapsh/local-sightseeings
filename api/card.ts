@@ -15,6 +15,7 @@ export interface ICardResponse {
 export interface IGeneralInfo {
   title: string;
   imageUrl: string;
+  imageUrlMobile?: string;
   address: string;
   openingHours?: string;
   phone?: string;

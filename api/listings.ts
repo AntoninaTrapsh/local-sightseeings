@@ -10,6 +10,7 @@ export interface ISight {
   title: string;
   description: string;
   imageUrl: string;
+  imageUrlMobile?: string;
   location: string;
 }
 

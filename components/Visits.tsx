@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { mockListing } from '@/app/sightseeings/_data';
+import { MOBILE_MEDIA } from '@/components/CoverImage';
 
 const VISITS: Array<{ id: string; className: string }> = [
     { id: 'mountain', className: 'object-[48%_52%]' },
@@ -33,11 +34,16 @@ export default function Visits() {
                             >
                                 <span
                                     className="relative block h-[236px] overflow-hidden sm:h-[320px] md:h-[420px] lg:h-[400px]">
-                                    <img
-                                        src={item.imageUrl}
-                                        alt={item.title}
-                                        className={`h-full w-full object-cover lg:transition-transform lg:duration-300 lg:group-hover:scale-105 ${item.className}`}
-                                    />
+                                    <picture className="contents">
+                                        {item.imageUrlMobile && (
+                                            <source media={MOBILE_MEDIA} srcSet={item.imageUrlMobile} />
+                                        )}
+                                        <img
+                                            src={item.imageUrl}
+                                            alt={item.title}
+                                            className={`h-full w-full object-cover lg:transition-transform lg:duration-300 lg:group-hover:scale-105 ${item.className}`}
+                                        />
+                                    </picture>
                                 </span>
                                 <span
                                     className="mt-4 text-[12px] font-semibold leading-tight text-[#171717] md:text-[18px] lg:hidden">

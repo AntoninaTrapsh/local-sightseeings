@@ -1,11 +1,20 @@
 import { ISight, IListingResponse } from '@/api/listings';
 import { SightListItem, SightMock } from '@/app/types/sight';
-import { mockMogutovaMountain } from '@/app/mocks/mockMogutovaMountain';
-import { mockBogatyrskayaSloboda } from '@/app/mocks/mockBogatyrskayaSloboda';
-import { mockPredannosti } from '@/app/mocks/mockPredannosti';
-import { mockPeschera } from '@/app/mocks/mockPeschera';
-import { mockPloshchadSlavi } from '@/app/mocks/mockPloshchadSlavi';
-import { mockLeninMuseum } from '@/app/mocks/mockLeninMuseum';
+import { mockMogutovaMountain } from '@/app/mocks/mogutova-mountain';
+import { mockBogatyrskayaSloboda } from '@/app/mocks/bogatyrskaya-sloboda';
+import { mockPredannosti } from '@/app/mocks/predannosti';
+import { mockPeschera } from '@/app/mocks/peschera';
+import { mockPloshchadSlavi } from '@/app/mocks/ploshchad-slavi';
+import { mockLeninMuseum } from '@/app/mocks/lenin-museum';
+import { mockGoluboeOzero } from '@/app/mocks/goluboe-ozero';
+import { mockGornolyzhnyiKompleksKrasnayaGlinka } from '@/app/mocks/gornolyzhnyi-kompleks-krasnaya-glinka';
+import { mockMolodetskiiKurgan } from '@/app/mocks/molodetskii-kurgan';
+import { mockMuzeiLyagushki } from '@/app/mocks/muzei-lyagushki';
+import { mockNaberezhnayaAvtozavodskogoRaionaTolyatti } from '@/app/mocks/naberezhnaya-avtozavodskogo-raiona-tolyatti';
+import { mockPadovskiyKarer } from '@/app/mocks/padovskiy-karer';
+import { mockSamarskayaIstoricheskayaMechet } from '@/app/mocks/samarskaya-istoricheskaya-mechet';
+import { mockSamarskiiOblastnoiKhudozhestvennyiMuzei } from '@/app/mocks/samarskii-oblastnoi-khudozhestvennyi-muzei';
+import { mockSernoeOzero } from '@/app/mocks/sernoe-ozero';
 
 export const mockSights: SightMock[] = [
   mockMogutovaMountain,
@@ -14,6 +23,15 @@ export const mockSights: SightMock[] = [
   mockPeschera,
   mockPloshchadSlavi,
   mockLeninMuseum,
+  mockGoluboeOzero,
+  mockGornolyzhnyiKompleksKrasnayaGlinka,
+  mockMolodetskiiKurgan,
+  mockMuzeiLyagushki,
+  mockNaberezhnayaAvtozavodskogoRaionaTolyatti,
+  mockPadovskiyKarer,
+  mockSamarskayaIstoricheskayaMechet,
+  mockSamarskiiOblastnoiKhudozhestvennyiMuzei,
+  mockSernoeOzero,
 ];
 
 const toListingSight = ({ id, description, location, card }: SightMock): ISight => ({
@@ -21,6 +39,7 @@ const toListingSight = ({ id, description, location, card }: SightMock): ISight 
   title: card.generalInfo.title,
   description,
   imageUrl: card.generalInfo.imageUrl,
+  imageUrlMobile: card.generalInfo.imageUrlMobile,
   location,
 });
 
