@@ -10,14 +10,13 @@ interface SightCardProps {
 }
 
 export const SightCard: FC<SightCardProps> = ({ sight }) => {
-  const { id, title, description, location, imageUrl, imageUrlMobile } = sight;
+  const { id, title, description, location, imageUrl } = sight;
   return (
     <article className={s.card}>
       <Link href={`/sightseeings/${id}`} className="link-around" data-description="на страницу достопримечательности" />
       <CoverImage
         className={s.image}
         src={imageUrl}
-        mobileSrc={imageUrlMobile}
         alt={description}
         width={212}
         height={128}

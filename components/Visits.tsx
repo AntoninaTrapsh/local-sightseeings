@@ -1,13 +1,11 @@
 import Link from 'next/link';
 import { mockListing } from '@/app/sightseeings/_data';
-import { MOBILE_MEDIA } from '@/components/CoverImage';
-
 const VISITS: Array<{ id: string; className: string }> = [
-    { id: 'mountain', className: 'object-[48%_52%]' },
+    { id: 'samarskii-oblastnoi-khudozhestvennyi-muzei', className: 'object-[50%_50%]' },
     { id: 'villages-soul', className: 'object-[42%_50%]' },
     { id: 'pamyatnik-predannosti', className: 'object-[50%_50%]' },
     { id: 'peschera', className: 'object-[50%_50%]' },
-    { id: 'pamyatnik-vasiliyu-tatishchevu', className: 'object-[44%_48%]' },
+    { id: 'padovskiy-karer', className: 'object-[50%_50%]' },
 ];
 
 // TODO: Добавить поддержку img как урл
@@ -30,27 +28,22 @@ export default function Visits() {
                             <Link
                                 key={item.id}
                                 href={item.href}
-                                className="group flex w-[176px] shrink-0 flex-col sm:w-[260px] md:w-[340px] lg:w-auto lg:flex-1 lg:transition-[flex-grow] lg:duration-300 lg:ease-out lg:hover:flex-[1.55]"
+                                className="group flex w-[176px] shrink-0 flex-col sm:w-[260px] md:w-[340px] lg:w-auto lg:min-w-0 lg:flex-1 lg:transition-[flex-grow] lg:duration-300 lg:ease-out lg:hover:flex-[1.55]"
                             >
                                 <span
                                     className="relative block h-[236px] overflow-hidden sm:h-[320px] md:h-[420px] lg:h-[400px]">
-                                    <picture className="contents">
-                                        {item.imageUrlMobile && (
-                                            <source media={MOBILE_MEDIA} srcSet={item.imageUrlMobile} />
-                                        )}
-                                        <img
-                                            src={item.imageUrl}
-                                            alt={item.title}
-                                            className={`h-full w-full object-cover lg:transition-transform lg:duration-300 lg:group-hover:scale-105 ${item.className}`}
-                                        />
-                                    </picture>
+                                    <img
+                                        src={item.imageUrlMobile ?? item.imageUrl}
+                                        alt={item.title}
+                                        className={`h-full w-full object-cover lg:transition-transform lg:duration-300 lg:group-hover:scale-105 ${item.className}`}
+                                    />
                                 </span>
                                 <span
                                     className="mt-4 text-[12px] font-semibold leading-tight text-[#171717] md:text-[18px] lg:hidden">
                                     {item.title}
                                 </span>
                                 <span
-                                    className="mt-4 hidden h-[28px] overflow-hidden whitespace-nowrap text-[20px] font-semibold leading-tight text-[#171717] opacity-0 transition-opacity duration-200 group-hover:opacity-100 group-focus-visible:opacity-100 lg:block">
+                                    className="mt-4 hidden h-[28px] overflow-hidden text-ellipsis whitespace-nowrap text-[20px] font-semibold leading-tight text-[#171717] opacity-0 transition-opacity duration-200 group-hover:opacity-100 group-focus-visible:opacity-100 lg:block">
                                     {item.title}
                                 </span>
                             </Link>
