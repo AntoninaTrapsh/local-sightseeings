@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import {useState, useEffect} from 'react';
+import { withBasePath } from '@/shared/utils/withBasePath';
 
 export default function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -26,7 +27,7 @@ export default function Header() {
                 <div className="flex items-center justify-between h-[52px] md:h-[88px]">
                     <Link href="/" className="inline-block shrink-0">
                         <img
-                            src="/images/logo.svg"
+                            src={withBasePath('/images/logo.svg')}
                             alt="ЗНАКОВЫЕ МЕСТА"
                             className="object-contain w-[90px] md:w-[137.75px] h-auto"
                         />

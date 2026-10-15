@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { withBasePath } from '@/shared/utils/withBasePath';
 
 export default function Main() {
     return (
@@ -6,7 +7,7 @@ export default function Main() {
             <div
                 className="relative mx-auto flex h-[310px] w-full max-w-[1920px] items-end overflow-hidden md:h-[780px] lg:h-[800px]">
                 <img
-                    src="/images/main-bg.jpg"
+                    src={withBasePath('/images/main-bg.jpg')}
                     alt="Самарская область — жемчужина на Волге"
                     className="absolute inset-0 h-full w-full object-cover object-[50%_50%]"/>
 

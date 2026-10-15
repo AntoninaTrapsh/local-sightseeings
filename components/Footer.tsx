@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { withBasePath } from '@/shared/utils/withBasePath';
 
 export default function Footer() {
     return (
@@ -8,7 +9,7 @@ export default function Footer() {
                     <div className="mb-10 md:mb-0">
                         <Link href="/" className="inline-block">
                             <img
-                                src="/images/logo.svg"
+                                src={withBasePath('/images/logo.svg')}
                                 alt="ЗНАКОВЫЕ МЕСТА"
                                 className="h-auto w-[118px] object-contain md:w-[155px] lg:w-[172.19px]"
                             />
@@ -43,15 +44,15 @@ export default function Footer() {
                                 <a href="https://max.ru/join/FOGzABe6EiNdhb8vr61vu54go6tcOxD4VZD6GN_qlmQ"
                                    target="_blank" rel="noopener noreferrer"
                                    className="hover:opacity-80 transition-opacity">
-                                    <img src="/images/social%20media/max.svg" alt="MAX" className="w-8 h-8"/>
+                                    <img src={withBasePath('/images/social%20media/max.svg')} alt="MAX" className="w-8 h-8"/>
                                 </a>
                                 <a href="https://vk.com/club237893137" target="_blank" rel="noopener noreferrer"
                                    className="hover:opacity-80 transition-opacity">
-                                    <img src="/images/social%20media/vk.svg" alt="VK" className="w-8 h-8"/>
+                                    <img src={withBasePath('/images/social%20media/vk.svg')} alt="VK" className="w-8 h-8"/>
                                 </a>
                                 <a href="https://rutube.ru/channel/26214635/" target="_blank" rel="noopener noreferrer"
                                    className="hover:opacity-80 transition-opacity">
-                                    <img src="/images/social%20media/rutube.svg" alt="Rutube" className="w-8 h-8"/>
+                                    <img src={withBasePath('/images/social%20media/rutube.svg')} alt="Rutube" className="w-8 h-8"/>
                                 </a>
                             </div>
                         </div>

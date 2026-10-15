@@ -1,20 +1,22 @@
+import { withBasePath } from '@/shared/utils/withBasePath';
+
 export default function Food() {
     const foodItems = [
         {
             name: "Калитки",
-            image: "/images/food/kalitki.jpg"
+            image: withBasePath("/images/food/kalitki.jpg")
         },
         {
             name: "Пахлава по-сызрански",
-            image: "/images/food/pahlava.jpg"
+            image: withBasePath("/images/food/pahlava.jpg")
         },
         {
             name: "Перепёчи",
-            image: "/images/food/perepechi.jpg"
+            image: withBasePath("/images/food/perepechi.jpg")
         },
         {
             name: "Самарская уха",
-            image: "/images/food/soup.jpg"
+            image: withBasePath("/images/food/soup.jpg")
         }
     ];
 
