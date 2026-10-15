@@ -1,34 +1,35 @@
 import Link from 'next/link';
+import { withBasePath } from '@/shared/utils/withBasePath';
 
 const routes = [
     {
         id: 1,
         title: 'Сёла с душой',
-        image: '/images/routes/villages-soul.jpg',
+        image: withBasePath('/images/routes/villages-soul.jpg'),
         href: '/routes/villages'
     },
     {
         id: 2,
         title: 'Святые места',
-        image: '/images/routes/holy-places.jpg',
+        image: withBasePath('/images/routes/holy-places.jpg'),
         href: '/routes/holy-places'
     },
     {
         id: 3,
         title: 'Купеческая Самара',
-        image: '/images/routes/merchant-samara.jpg',
+        image: withBasePath('/images/routes/merchant-samara.jpg'),
         href: '/routes/merchant-samara'
     },
     {
         id: 4,
         title: 'Заводы и космос',
-        image: '/images/routes/factories-space.jpg',
+        image: withBasePath('/images/routes/factories-space.jpg'),
         href: '/routes/factories-space'
     },
     {
         id: 5,
         title: 'Волжские просторы',
-        image: '/images/routes/volga-expanses.jpg',
+        image: withBasePath('/images/routes/volga-expanses.jpg'),
         href: '/routes/volga-expanses'
     }
 ];
