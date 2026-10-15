@@ -1,10 +1,23 @@
 import { SightMock } from '@/app/types/sight';
-import cover from './cover.jpg';
+import coverDesktop from './cover_desktop.jpg';
+import coverMobile from './cover_mobile.jpg';
 import gallery1 from './gallery/1.jpg';
-import gallery2 from './gallery/2.jpg';
+import gallery2 from './gallery/2.webp';
 import gallery3 from './gallery/3.jpg';
 import gallery4 from './gallery/4.jpg';
-import gallery5 from './gallery/5.jpg';
+import gallery5 from './gallery/5.webp';
+import gallery6 from './gallery/6.jpg';
+import gallery7 from './gallery/7.webp';
+import gallery8 from './gallery/8.jpg';
+import gallery9 from './gallery/9.webp';
+import gallery10 from './gallery/10.jpg';
+import gallery11 from './gallery/11.jpg';
+import gallery12 from './gallery/12.jpg';
+import gallery13 from './gallery/13.webp';
+import gallery14 from './gallery/14.jpg';
+import gallery15 from './gallery/15.jpg';
+import gallery16 from './gallery/16.jpg';
+import gallery17 from './gallery/17.webp';
 
 export const mockMogutovaMountain: SightMock = {
   id: 'mountain',
@@ -14,7 +27,8 @@ export const mockMogutovaMountain: SightMock = {
   card: {
     generalInfo: {
       title: 'Гора Могутова',
-      imageUrl: cover.src,
+      imageUrl: coverDesktop.src,
+      imageUrlMobile: coverMobile.src,
       address: 'Самарская область, г. Жигулёвск, Могутовая гора',
       openingHours: 'Круглосуточно',
       price: 'Бесплатно',
@@ -50,7 +64,24 @@ export const mockMogutovaMountain: SightMock = {
       'https://rutube.ru/video/2da46f86775ec5f6b9589377059dc359/',
       'https://rutube.ru/video/2da46f86775ec5f6b9589377059dc359/',
     ],
-    audioGuides: ['https://example.com/audio-tour.mp3'],
-    gallery: [gallery1, gallery2, gallery3, gallery4, gallery5].map((image) => image.src),
+    gallery: [
+      gallery1,
+      gallery2,
+      gallery3,
+      gallery4,
+      gallery5,
+      gallery6,
+      gallery7,
+      gallery8,
+      gallery9,
+      gallery10,
+      gallery11,
+      gallery12,
+      gallery13,
+      gallery14,
+      gallery15,
+      gallery16,
+      gallery17,
+    ].map((image) => image.src),
   },
 };

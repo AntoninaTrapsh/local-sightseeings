@@ -4,6 +4,10 @@ import gallery1 from './gallery/1.png';
 import gallery2 from './gallery/2.png';
 import gallery3 from './gallery/3.png';
 import gallery4 from './gallery/4.png';
+import gallery5 from './gallery/5.png';
+import gallery6 from './gallery/6.jpg';
+import gallery7 from './gallery/7.jpg';
+import gallery8 from './gallery/8.jpg';
 
 export const mockPeschera: SightMock = {
   id: 'peschera',
@@ -49,6 +53,6 @@ export const mockPeschera: SightMock = {
       'Легенда о подземных ходах к крепости. В 1970-х гг. самарские спелеологи записали со слов местного краеведа Голяшина, что подземные ходы Сергиевской крепости соединяются с Серноводской пещерой за металлической дверью. Однако попытки найти этот переход не увенчались успехом.',
       'Геологическая гипотеза о глубинном этаже. Исследователи предполагают, что на глубине около 70 м находится «подвальный» этаж пещеры. В ближайших буровых скважинах нефтяники действительно фиксировали обширные карстовые пустоты, что косвенно подтверждает гипотезу, а также наличие донных отверстий (поноров) с потоком воздуха. Прямых подтверждений нет.',
     ],
-    gallery: [gallery1, gallery2, gallery3, gallery4].map((image) => image.src),
+    gallery: [gallery1, gallery2, gallery3, gallery4, gallery5, gallery6, gallery7, gallery8].map((image) => image.src),
   },
 };

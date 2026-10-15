@@ -4,13 +4,15 @@ import { mockMogutovaMountain } from '@/app/mocks/mogutova-mountain';
 import { mockBogatyrskayaSloboda } from '@/app/mocks/bogatyrskaya-sloboda';
 import { mockPredannosti } from '@/app/mocks/predannosti';
 import { mockPeschera } from '@/app/mocks/peschera';
-import { mockPloshchadSlavi } from '@/app/mocks/ploshchad-slavi';
+import { mockTatischeva } from '@/app/mocks/tatischeva';
 import { mockLeninMuseum } from '@/app/mocks/lenin-museum';
 import { mockGoluboeOzero } from '@/app/mocks/goluboe-ozero';
 import { mockGornolyzhnyiKompleksKrasnayaGlinka } from '@/app/mocks/gornolyzhnyi-kompleks-krasnaya-glinka';
 import { mockMolodetskiiKurgan } from '@/app/mocks/molodetskii-kurgan';
 import { mockMuzeiLyagushki } from '@/app/mocks/muzei-lyagushki';
 import { mockNaberezhnayaAvtozavodskogoRaionaTolyatti } from '@/app/mocks/naberezhnaya-avtozavodskogo-raiona-tolyatti';
+import { mockOgonVechnoiSlavy } from '@/app/mocks/ogon-vechnoi-slavy';
+import { mockVoznesenskiiMuzhskoiMonastyr } from '@/app/mocks/voznesenskii-muzhskoi-monastyr';
 import { mockPadovskiyKarer } from '@/app/mocks/padovskiy-karer';
 import { mockSamarskayaIstoricheskayaMechet } from '@/app/mocks/samarskaya-istoricheskaya-mechet';
 import { mockSamarskiiOblastnoiKhudozhestvennyiMuzei } from '@/app/mocks/samarskii-oblastnoi-khudozhestvennyi-muzei';
@@ -21,7 +23,7 @@ export const mockSights: SightMock[] = [
   mockBogatyrskayaSloboda,
   mockPredannosti,
   mockPeschera,
-  mockPloshchadSlavi,
+  mockTatischeva,
   mockLeninMuseum,
   mockGoluboeOzero,
   mockGornolyzhnyiKompleksKrasnayaGlinka,
@@ -32,6 +34,8 @@ export const mockSights: SightMock[] = [
   mockSamarskayaIstoricheskayaMechet,
   mockSamarskiiOblastnoiKhudozhestvennyiMuzei,
   mockSernoeOzero,
+  mockOgonVechnoiSlavy,
+  mockVoznesenskiiMuzhskoiMonastyr,
 ];
 
 const toListingSight = ({ id, description, location, card }: SightMock): ISight => ({

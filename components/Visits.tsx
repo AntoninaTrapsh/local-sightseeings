@@ -5,9 +5,9 @@ import { MOBILE_MEDIA } from '@/components/CoverImage';
 const VISITS: Array<{ id: string; className: string }> = [
     { id: 'mountain', className: 'object-[48%_52%]' },
     { id: 'villages-soul', className: 'object-[42%_50%]' },
-    { id: 'predannosti', className: 'object-[50%_50%]' },
+    { id: 'pamyatnik-predannosti', className: 'object-[50%_50%]' },
     { id: 'peschera', className: 'object-[50%_50%]' },
-    { id: 'glory-square', className: 'object-[44%_48%]' },
+    { id: 'pamyatnik-vasiliyu-tatishchevu', className: 'object-[44%_48%]' },
 ];
 
 // TODO: Добавить поддержку img как урл
