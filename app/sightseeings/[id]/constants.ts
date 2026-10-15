@@ -1,21 +1,18 @@
-import { SightExtendedT } from "@/app/types/sight";
+import { ICardResponse } from '@/api/card';
 
-export type SectionId = 'info' | 'facts' | 'history' | 'legends' | 'videoTours' | 'audios' | 'gallery' | 'map' | 'sightPlaces' | 'nearby';
+export type SectionId = 'info' | 'facts' | 'history' | 'legends' | 'videoTours' | 'audioGuides' | 'gallery' | 'map';
 
-// TODO: после перехода на ICardResponse заменить historyParagraphs на history?.items
 export const SECTION_CONFIG: Array<{
   id: SectionId;
   label: string;
-  show: (data: SightExtendedT) => boolean;
+  show: (card: ICardResponse) => boolean;
 }> = [
   { id: 'info', label: 'Общая информация', show: () => true },
-  { id: 'facts', label: 'Факты', show: (d) => !!d?.facts?.length },
-  { id: 'history', label: 'История', show: (d) => !!d?.historyParagraphs?.length },
-  { id: 'legends', label: 'Легенды', show: (d) => !!d?.legends?.length },
-  { id: 'videoTours', label: 'Видео-экскурсия', show: (d) => !!d?.videoTours?.length },
-  { id: 'audios', label: 'Аудиогид', show: (d) => !!d?.audios?.length },
-  { id: 'gallery', label: 'Галерея', show: (d) => !!d?.gallery?.length },
-  { id: 'map', label: 'На карте', show: (d) => !!d?.map },
-  { id: 'sightPlaces', label: 'Входит в маршрут', show: (d) => !!d?.sightPlaces?.length },
-  { id: 'nearby', label: 'Рядом', show: (d) => !!d?.nearby?.length },
+  { id: 'facts', label: 'Факты', show: (card) => !!card.facts?.length },
+  { id: 'history', label: 'История', show: (card) => !!card.history?.items.length },
+  { id: 'legends', label: 'Легенды', show: (card) => !!card.legends?.length },
+  { id: 'videoTours', label: 'Видео-экскурсия', show: (card) => !!card.videoTours?.length },
+  { id: 'audioGuides', label: 'Аудиогид', show: (card) => !!card.audioGuides?.length },
+  { id: 'gallery', label: 'Галерея', show: (card) => !!card.gallery?.length },
+  { id: 'map', label: 'На карте', show: () => true },
 ];

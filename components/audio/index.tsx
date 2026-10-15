@@ -1,4 +1,7 @@
-import { FC } from "react";
+'use client';
+
+import { FC, useEffect, useState } from "react";
+import { isYandexDiskUrl, resolveYandexDiskUrl } from '@/shared/utils/resolveYandexDiskUrl';
 
 interface AudioProps {
   src: string;
@@ -19,6 +22,20 @@ export const Audio:FC<AudioProps> = ({
   preload = 'metadata',
   className,
 }) => {
+  const [resolved, setResolved] = useState<{ from: string; url: string }>();
+  const resolvedSrc = isYandexDiskUrl(src) ? (resolved?.from === src ? resolved.url : undefined) : src;
+
+  useEffect(() => {
+    if (!isYandexDiskUrl(src)) return;
+    let cancelled = false;
+    resolveYandexDiskUrl(src)
+      .then((url) => !cancelled && setResolved({ from: src, url }))
+      .catch((error) => console.error(error));
+    return () => {
+      cancelled = true;
+    };
+  }, [src]);
+
   return (
     <audio
       controls={controls}
@@ -27,8 +44,8 @@ export const Audio:FC<AudioProps> = ({
       muted={muted}
       preload={preload}
       className={className}
+      src={resolvedSrc}
     >
-      <source src={src} type="audio/mpeg" />
       Ваш браузер не поддерживает аудио элемент.
     </audio>
   );

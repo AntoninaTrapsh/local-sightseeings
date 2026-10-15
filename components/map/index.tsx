@@ -1,29 +1,25 @@
 "use client"
 import { YMaps, Map, Placemark } from '@mr-igorinni/react-yandex-maps-fork';
 import { FC } from 'react';
+import { IMapLocation } from '@/api/card';
 import s from './styles.module.css'
 
-type Coordinates = [number, number];
+const DEFAULT_ZOOM = 15;
 
 interface YandexMapProps {
-  center: Coordinates;
-  zoom: number;
-  points: Coordinates[];
+  location: IMapLocation;
+  zoom?: number;
 }
 
-export const YandexMap:FC<YandexMapProps> = ({ center, zoom, points }) => {
+export const YandexMap:FC<YandexMapProps> = ({ location, zoom = DEFAULT_ZOOM }) => {
+  const point: [number, number] = [location.lat, location.lng];
   return (
     <YMaps>
       <Map
-        defaultState={{ center, zoom }}
+        defaultState={{ center: point, zoom }}
         className={s.map}
       >
-        {points.map((point) => (
-          <Placemark
-            key={point.toString()}
-            geometry={point}
-          />
-        ))}
+        <Placemark geometry={point} />
       </Map>
     </YMaps>
   );

@@ -1,12 +1,12 @@
 import { FC } from 'react';
 import s from './styles.module.css';
-import Image from 'next/image';
+import { CoverImage } from '@/components/CoverImage';
 import cn from 'classnames';
 import Link from 'next/link';
-import { SightT } from '@/app/types/sight';
+import { ISight } from '@/api/listings';
 
 interface SightCardProps {
-  sight: SightT;
+  sight: ISight;
 }
 
 export const SightCard: FC<SightCardProps> = ({ sight }) => {
@@ -14,7 +14,13 @@ export const SightCard: FC<SightCardProps> = ({ sight }) => {
   return (
     <article className={s.card}>
       <Link href={`/sightseeings/${id}`} className="link-around" data-description="на страницу достопримечательности" />
-      <Image className={s.image} src={imageUrl} alt={description} width={212} height={128} />
+      <CoverImage
+        className={s.image}
+        src={imageUrl}
+        alt={description}
+        width={212}
+        height={128}
+      />
       <h3 className={cn('text-md', s.title)}>{title}</h3>
       <p className={cn('text-lg', s.description)}>{description}</p>
       <p className={cn('text-md', s.location)}>{location}</p>
