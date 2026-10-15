@@ -17,7 +17,7 @@ export const CoverImage: FC<CoverImageProps> = ({ src, mobileSrc, alt, ...imageP
   const { props: mobileProps } = getImageProps({ ...imageProps, src: mobileSrc, alt });
 
   return (
-    <picture className="contents">
+    <picture className="contents [&>source]:hidden">
       <source media={MOBILE_MEDIA} srcSet={mobileProps.srcSet} sizes={mobileProps.sizes} />
       <img {...props} alt={alt} />
     </picture>
